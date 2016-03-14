@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'semantic-ui-sass', '~> 1.12.3.0'
 gem 'annotate', '~> 2.6.10'
+gem 'devise', '~> 3.5.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
