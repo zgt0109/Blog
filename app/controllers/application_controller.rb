@@ -8,10 +8,12 @@ class ApplicationController < ActionController::Base
 
   private
     def main_layout
-      if ['/users/sign_in'].include?( request.path )
+      if ['/users/sign_in', '/admin/sign_in'].include?( request.path )
         false
       elsif params[:controller] =~ /^user/
         'user'
+      elsif params[:controller] =~ /^admin/
+        'admin'
       else
         'application'
       end
@@ -19,5 +21,6 @@ class ApplicationController < ActionController::Base
 
     def login_require
       authenticate_user! if params[:controller] =~ /^user/
+      authenticate_admin! if params[:controller] =~ /^admin/
     end
 end
