@@ -1,0 +1,10 @@
+<% if error.errors.any? %>
+  <div class="ui message error">
+    <div class="header"><%= title %></div>
+    <div class="list">
+      <% error.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </div>
+  </div>
+<% end %>

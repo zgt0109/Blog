@@ -43,6 +43,7 @@ GEM
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bower-rails (0.10.0)
     builder (3.2.2)
     byebug (8.2.2)
     coffee-rails (4.1.1)
@@ -161,6 +162,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (~> 2.6.10)
+  bower-rails (~> 0.10.0)
   byebug
   coffee-rails (~> 4.1.0)
   devise (~> 3.5.1)
