@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # 管理员
   namespace :admin do
     root 'welcome#index'
+    resources :articles
   end
 
   # 个人用户登录系统

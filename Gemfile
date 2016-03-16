@@ -27,6 +27,10 @@ gem 'semantic-ui-sass', '~> 1.12.3.0'
 gem 'annotate', '~> 2.6.10'
 gem 'devise', '~> 3.5.1'
 gem "bower-rails", "~> 0.10.0"
+gem 'enumerize', '~> 0.11.0'
+gem 'rails-i18n', '~> 4.0.4'
+gem 'kaminari'
+gem "seedbank"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
