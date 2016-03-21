@@ -1,0 +1,39 @@
+<div class="ui segment">
+  <div class="ui grid">
+    <div class="row">
+      <div class="three wide column">
+        标题
+      </div>
+      <div class="four wide column">
+        <%= @article.title %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="three wide column">
+        内容
+      </div>
+      <div class="four wide column">
+        <%= @article.content %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="three wide column">
+        文章分类
+      </div>
+      <div class="four wide column">
+        <%= @article.article_type_text %>
+      </div>
+    </div>
+
+    <div class="row">
+      <%= render 'replies/form' %>
+    </div>
+
+
+    <div class="row">
+      <%= link_to 'Back', user_articles_path, class: 'ui button green' %>
+    </div>
+  </div>
+</div>

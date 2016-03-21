@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
   root 'welcome#index'
-
   # 个人用户
   namespace :user do
     root 'welcome#index'
+    resources :articles, only:[:index, :show] do
+      get 'reply', on: :member
+    end
   end
 
   # 管理员
