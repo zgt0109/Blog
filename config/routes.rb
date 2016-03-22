@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   # 管理员
   namespace :admin do
     root 'welcome#index'
-    resources :articles
+    resources :articles do
+      get 'search', on: :collection
+    end
     resources :article_types
   end
 

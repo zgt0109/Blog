@@ -1,6 +1,19 @@
 <h1>文章列表</h1>
-<div class="ui segment">
-总共<%=@articles.total_count %>条, 共<%= @articles.total_pages %>页, 当前第<%= @articles.current_page%>页.
+
+<div class="ui two column middle aligned grid">
+    <div class="column">
+      总共<%=@articles.total_count %>条, 共<%= @articles.total_pages %>页, 当前第<%= @articles.current_page%>页.
+    </div>
+    <div class="right floated column five wide">
+
+      <%= form_tag '/admin/articles/search', :method => 'get', class: 'ui form' do %>
+      <div class="ui input">
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "搜索", :name => nil, class: 'ui button green' %>
+      </div>
+      <% end %>
+
+    </div>
 </div>
 <table class="ui table">
   <thead>

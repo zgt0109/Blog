@@ -5,7 +5,11 @@ class Admin::ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = current_admin.articles.page params[:page]
-    # current_admin.articles.page(params[:page]).per(2)
+  end
+
+  def search
+    @articles = Article.where('content like ?', "%#{params[:search]}%")
+    render partial: '/admin/articles/search'
   end
 
   # GET /articles/1
