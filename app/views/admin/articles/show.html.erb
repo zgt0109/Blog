@@ -23,12 +23,12 @@
         文章分类
       </div>
       <div class="four wide column">
-        <%= @article.article_type_text %>
+        <%= @article.article_type.name %>
       </div>
     </div>
     <div class="row">
-      <%= link_to 'Edit', edit_admin_article_path(@article), class: 'ui button red' %> |
-      <%= link_to 'Back', admin_articles_path, class: 'ui button green' %>
+      <%= link_to t("action.edit"), edit_admin_article_path(@article), class: 'ui button red' %> |
+      <%= link_to t("action.back"), admin_articles_path, class: 'ui button green' %>
     </div>
   </div>
 </div>

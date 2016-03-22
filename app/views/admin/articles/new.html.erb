@@ -2,5 +2,5 @@
 <div class="ui segment">
   <%= render partial: 'layouts/errors', locals: {title:'新增失败', error: @article} %>
   <%= render 'form' %>
-  <%= link_to 'Back', admin_articles_path, class: 'ui button red' %>
+  <%= link_to t("action.back"), admin_articles_path, class: 'ui button red' %>
 </div>

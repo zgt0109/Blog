@@ -1,0 +1,11 @@
+<%= form_for [:admin, @article_type], html: {class: 'ui form'} do |f| %>
+<div class="field four wide">
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.submit class: 'ui button green'%>
+  </div>
+</div>
+<% end %>

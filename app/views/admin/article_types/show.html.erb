@@ -1,0 +1,16 @@
+<div class="ui segment">
+  <div class="ui grid">
+    <div class="row">
+      <div class="three wide column">
+        文章分类
+      </div>
+      <div class="four wide column">
+        <%= @article_type.name %>
+      </div>
+    </div>
+    <div class="row">
+      <%= link_to t("action.edit"), edit_admin_article_type_path(@article_type), class: 'ui button red' %> |
+      <%= link_to t("action.back"), admin_article_types_path, class: 'ui button green' %>
+    </div>
+  </div>
+</div>

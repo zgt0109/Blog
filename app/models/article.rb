@@ -2,15 +2,15 @@
 #
 # Table name: articles
 #
-#  id           :integer          not null, primary key
-#  admin_id     :integer
-#  user_id      :integer
-#  title        :string
-#  content      :text
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  article_type :string
-#  deleted_at   :datetime
+#  id              :integer          not null, primary key
+#  admin_id        :integer
+#  user_id         :integer
+#  title           :string
+#  content         :text
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  deleted_at      :datetime
+#  article_type_id :integer
 #
 # Indexes
 #
@@ -19,12 +19,11 @@
 #
 
 class Article < ActiveRecord::Base
-  extend Enumerize
-  enumerize :article_type, in: [:note, :ad, :it]
   belongs_to :admin
   belongs_to :user
+  belongs_to :article_type
   default_scope {order('created_at desc')}
 
   validates :title, presence: true
-  validates :content, presence: true, length: { in: 2..200 }
+  validates :content, presence: true, length: { in: 2..600 }
 end

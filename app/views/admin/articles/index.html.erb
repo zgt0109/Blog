@@ -1,5 +1,7 @@
 <h1>文章列表</h1>
-
+<div class="ui segment">
+总共<%=@articles.total_count %>条, 共<%= @articles.total_pages %>页, 当前第<%= @articles.current_page%>页.
+</div>
 <table class="ui table">
   <thead>
     <tr>
@@ -17,16 +19,17 @@
         <td><%= article.id %></td>
         <td><%= article.title %></td>
         <td><%= article.content %></td>
-        <td><%= article.article_type_text %></td>
-        <td><%= link_to 'Show', admin_article_path(article) %></td>
-        <td><%= link_to 'Edit', edit_admin_article_path(article) %></td>
-        <td><%= link_to 'Destroy', admin_article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to article.article_type.name, admin_article_type_path(article.article_type_id) %></td>
+        <td><%= link_to t("action.show"), admin_article_path(article) %></td>
+        <td><%= link_to t("action.edit"), edit_admin_article_path(article) %></td>
+        <td><%= link_to t("action.delete"), admin_article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
 <%= paginate @articles %>
 
 <br>
 
-<%= link_to 'New Article', new_admin_article_path, class: 'ui button green' %>
+<%= link_to t("action.new"), new_admin_article_path, class: 'ui button green' %>

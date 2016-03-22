@@ -16,7 +16,8 @@
   <div class="ui segment inverted red">
     <div class="ui grid page">
       <div class="ui menu inverted red">
-        <%= link_to '用户资料', '#', class: 'item' %>
+        <%= link_to '后台首页', admin_root_path, class: 'item' %>
+        <%= link_to '管理员资料', '#', class: 'item' %>
         <div class="right menu">
           <div class="ui dropdown item">
             <%= current_admin.email %>

@@ -7,9 +7,10 @@
       <%= f.label :content %>
       <%= f.text_area :content %>
 
-      <%= f.label :article_type %>
-      <%= f.select :article_type, Article.article_type.options,
-          {include_blank: false},{class: 'ui dropdown'} %>
+      <%= f.label  :article_type_id %>
+			<%= f.select :article_type_id,
+						ArticleType.all.collect{ |f| [f.name, f.id] },
+						{include_blank: false},{class: 'ui dropdown'} %>
     </div>
     <div class="field">
       <%= f.submit class: 'ui button green'%>

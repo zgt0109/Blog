@@ -1,10 +1,21 @@
 zh-CN:
-  enumerize:
-    defaults:
-      article_type:
-        note: "随身笔记"
-        ad: "广告咨询"
-        it: "IT咨询"
+  # enumerize:
+  #   defaults:
+  #     article_type:
+  #       note: "随身笔记"
+  #       ad: "广告咨询"
+  #       it: "IT咨询"
+
+  action:
+    new: 新增
+    edit: 编辑
+    show: 查看
+    delete: 删除
+    back: 返回
+    options: 操作
+    created_at: 创建于
+    updated_at: 更新于
+    deleted_at: 删除于
 
   views:
     pagination:
@@ -13,12 +24,15 @@ zh-CN:
       previous: "&laquo; 上一页"
       next: "下一页 &raquo;"
       truncate: "..."
-
+  
   activerecord:
     models:
       article: 文章
+      article_type: 文章类型
     attributes:
       article:
         title: 文章标题
         content: 文章内容
-        article_type: 文章类型
+        article_type_id: 分类名称
+      article_type:
+        name: 分类名称

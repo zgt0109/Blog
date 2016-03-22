@@ -1,0 +1,6 @@
+<h1>修改文章分类</h1>
+<div class="ui segment">
+  <%= render partial: 'layouts/errors', locals: {title:'修改失败', error: @article_type} %>
+  <%= render 'form' %>
+  <%= link_to t("action.back"), admin_article_types_path, class: 'ui button red' %>
+</div>
