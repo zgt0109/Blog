@@ -19,11 +19,10 @@
 #
 
 class Article < ActiveRecord::Base
-  # 添加标签的功能  
+  # 添加标签的功能
   acts_as_taggable
   # 标签
   acts_as_taggable_on :tags
-  attr_accessible :title, :content, :article_type_id, :tag_list
   belongs_to :admin
   belongs_to :user
   belongs_to :article_type

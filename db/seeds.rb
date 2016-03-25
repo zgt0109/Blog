@@ -16,7 +16,8 @@ puts "创建测试文章数据......"
               看过了图，有必要说道说道iPhone 7可能会带来的几大重要改变，
               这些功能的提升往往要比外观重设来的更加凶猛和实在。抛去肯定会提升的常规硬件配置不说，
               iPhone 7系列还将会有哪些刺激感官的变化？_#{article_seq}",
-    article_type_id: 10
+    article_type_id: 10,
+    tag_list: "时间 演讲 生活 养生 理财"
   )
 end
 admin.save
