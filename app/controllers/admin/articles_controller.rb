@@ -5,6 +5,12 @@ class Admin::ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = current_admin.articles.page params[:page]
+    @arts = Article.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @arts.to_csv }
+      format.xls# { send_data @articles.to_csv(col_sep: "\t") }
+    end
   end
 
   def search
@@ -30,7 +36,6 @@ class Admin::ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = current_admin.articles.build(article_params)
-
     respond_to do |format|
       if @article.save
         format.html { redirect_to [:admin,@article], notice: 'Article was successfully created.' }
@@ -76,5 +81,19 @@ class Admin::ArticlesController < ApplicationController
     def article_params
       # binding.pry
       params.require(:article).permit(:title, :content, :article_type_id, :tag_list)
+    end
+
+    def csv_content_for(objs)
+      FasterCSV.generate do |csv|
+        csv << ["Username", "Email"]
+
+        objs.each do |record|
+          csv << [
+            record.login,
+            record.email
+           ]
+        end
+
+      end
     end
 end

@@ -19,6 +19,7 @@
 #
 
 class Article < ActiveRecord::Base
+  acts_as_paranoid
   # 添加标签的功能
   acts_as_taggable
   # 标签
@@ -30,4 +31,13 @@ class Article < ActiveRecord::Base
 
   validates :title, presence: true
   validates :content, presence: true, length: { in: 2..600 }
+
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |article|
+        csv << article.attributes.values_at(*column_names)  # 将数据插入数组中
+      end
+    end
+  end
 end

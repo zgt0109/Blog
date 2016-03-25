@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">文章ID</Data></Cell>
+        <Cell><Data ss:Type="String">文章标题</Data></Cell>
+        <Cell><Data ss:Type="String">文章内容</Data></Cell>
+        <Cell><Data ss:Type="String">文章类型</Data></Cell>
+        <Cell><Data ss:Type="String">文章标签</Data></Cell>
+      </Row>
+    <% @arts.each do |article| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= article.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= article.title %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= article.content %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= article.article_type.name %></Data></Cell>
+        <Cell><Data ss:Type="String">
+          <% article.tags.each do |tag| %>
+            <%= tag.name %>
+          <% end %>
+      </Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

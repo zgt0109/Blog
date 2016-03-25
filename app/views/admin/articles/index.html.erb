@@ -1,5 +1,10 @@
 <h1>文章列表</h1>
-
+<div class="ui segment">
+  <span><b>文章导出：</b>
+    <%= link_to "CSV", admin_articles_path(format: "csv"), class: 'ui mini button teal' %> |
+    <%= link_to "Excel", admin_articles_path(format: "xls"), class: 'ui mini button teal' %>
+  </span>
+</div>
 <div class="ui two column middle aligned grid">
     <div class="column">
       总共<%=@articles.total_count %>条, 共<%= @articles.total_pages %>页, 当前第<%= @articles.current_page%>页.
