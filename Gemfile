@@ -31,7 +31,8 @@ gem 'enumerize', '~> 0.11.0'
 gem 'rails-i18n', '~> 4.0.4'
 gem 'kaminari'
 gem "seedbank"
-
+gem 'acts-as-taggable-on', '~>3.4'
+gem 'protected_attributes', '1.0.8'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -52,4 +53,5 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'pry-rails'
 end
