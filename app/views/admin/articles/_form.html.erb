@@ -11,6 +11,9 @@
 			<%= f.select :article_type_id,
 						ArticleType.all.collect{ |f| [f.name, f.id] },
 						{include_blank: false},{class: 'ui dropdown'} %>
+
+      <%= f.label :tag_list %>
+      <%= f.text_field :tag_list, placeholder: "输入tags,用'空格'分开" %>
     </div>
     <div class="field">
       <%= f.submit class: 'ui button green'%>

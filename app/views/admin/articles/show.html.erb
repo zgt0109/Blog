@@ -26,6 +26,19 @@
         <%= @article.article_type.name %>
       </div>
     </div>
+
+    <div class="row">
+      <div class="three wide column">
+        文章标签
+      </div>
+      <div class="four wide column">
+        <% @article.tags.each do |tag| %>
+          <span class="ui tiny teal label">
+            <%= tag.name %>
+          </span>
+        <% end %>
+      </div>
+    </div>
     <div class="row">
       <%= link_to t("action.edit"), edit_admin_article_path(@article), class: 'ui button red' %> |
       <%= link_to t("action.back"), admin_articles_path, class: 'ui button green' %>

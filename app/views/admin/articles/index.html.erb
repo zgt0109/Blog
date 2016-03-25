@@ -21,7 +21,8 @@
       <th>文章ID</th>
       <th>文章标题</th>
       <th>文章内容</th>
-      <th>文章类型</th>
+      <th style="width:100px;">文章类型</th>
+      <th>文章标签</th>
       <th colspan="3">操作</th>
     </tr>
   </thead>
@@ -30,9 +31,24 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= article.id %></td>
-        <td><%= article.title %></td>
-        <td><%= article.content %></td>
+        <td>
+          <nobr>
+            <%= article.title %>
+          </nobr>
+        </td>
+        <td>
+          <nobr>
+            <%= article.content %>
+          </nobr>
+        </td>
         <td><%= link_to article.article_type.name, admin_article_type_path(article.article_type_id) %></td>
+        <td>
+          <% article.tags.each do |tag| %>
+            <span class="ui tiny teal label">
+              <%= tag.name %>
+            </span>
+          <% end %>
+        </td>
         <td><%= link_to t("action.show"), admin_article_path(article) %></td>
         <td><%= link_to t("action.edit"), edit_admin_article_path(article) %></td>
         <td><%= link_to t("action.delete"), admin_article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
